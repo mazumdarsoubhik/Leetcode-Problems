@@ -25,10 +25,10 @@ int main()
 
         int stars = 9-i+1;                  // Total no. of stars at each level
         int lt = middle - ((stars-1)/2);    // Left index of star in array -- goes for every level
-        int rt = middle + ((stars-1)/2);    // Left index of star in array -- goes for every level
+        int rt = middle + ((stars-1)/2);    // Right index of star in array -- goes for every level
 
-        *(b+lt) = '*';                      // Set to * at left index
-        *(b+rt) = '*';                      // Set to * at right index
+        *(b+lt) = '*';                      // Set * at left index
+        *(b+rt) = '*';                      // Set * at right index
         
         printf("%s %s",b,"\n");             // Print the array of each level
 
