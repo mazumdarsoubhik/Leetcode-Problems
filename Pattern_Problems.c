@@ -68,7 +68,7 @@ int main()
 /******************************************************************************
 
                         Right triangle with real numbers
-                        Time complexity: O(n)
+                        Time complexity: O(n^2)
 Output:
 1  
 2  3  
@@ -99,3 +99,77 @@ int main()
 
     return 0;
 }
+
+/******************************************************************************
+
+                        Right triangle with alphabets
+                        Time complexity: O(n)
+                        Brute force: O(n^2)
+Output:
+A 
+AB 
+ABC 
+ABCD 
+ABCDE
+
+*******************************************************************************/
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+
+int main()
+{
+    printf("Right triangle with alphabets \n");
+    
+    char a = 'A';
+    int n = 5;
+    char b[100];
+    int ind = 0;
+    for(int i=0; i < n; i++){
+        b[i] = a + ind;
+        ind++;
+        printf("%s %s", b,"\n");
+    }
+
+    return 0;
+}
+
+/******************************************************************************
+
+                        Reverse Right triangle with alphabets
+                        Time complexity: O(n)
+                        Brute force: O(n^2)
+Output:
+ABCDE 
+ABCD 
+ABC 
+AB 
+A
+
+*******************************************************************************/
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+
+int main()
+{
+    printf("Reverse Right triangle with alphabets \n");
+    
+    char a = 'A';
+    int n = 5;
+    char b[100];
+    
+    for (int k=0; k < n; k++) b[k] = a + k;
+    
+    printf("%s %s", b,"\n");
+    
+    for(int i=n-1; i >= 0 && b[0] != '\0'; i--){
+        b[i] = '\0';
+        printf("%s %s", b,"\n");
+    }
+
+    return 0;
+}
+
