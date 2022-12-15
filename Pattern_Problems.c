@@ -297,3 +297,55 @@ int main()
     return 0;
 }
 
+/******************************************************************************
+
+                        Asterisk Barfi Cut out
+                        Time complexity: O(n)
+                        Brute force: O(n^2)
+Output:
+********** 
+****  **** 
+***    *** 
+**      ** 
+*        * 
+*        * 
+**      ** 
+***    *** 
+****  **** 
+********** 
+
+*******************************************************************************/
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+
+int main()
+{
+    printf("Asterisk Barfi Cut out \n");
+    
+    int n = 10;
+    char a = 'A';
+    char b[100];
+    
+    for(int s=0; s<n; s++) b[s] = '*';
+    
+    for(int i=0; i<n/2 ; i++){
+        if (i>0) {
+            b[n/2 - i] = ' ';
+            b[n/2 + i-1] = ' ';
+        }
+        printf("%s %s", b, "\n");
+    }
+    
+    for(int i=0; i<n/2 ; i++){
+        if (i>0) {
+            b[i] = '*';
+            b[n-1-i] = '*';
+        }
+        printf("%s %s", b, "\n");
+    }
+
+    return 0;
+}
+
