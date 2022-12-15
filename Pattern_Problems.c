@@ -244,3 +244,56 @@ int main()
     return 0;
 }
 
+/******************************************************************************
+
+                        Alphabet Pyramid
+                        Time complexity: O(n^2)
+                        Brute force: O(n^2)
+Output:
+   A    
+  ABA   
+ ABCBA  
+ABCDCBA
+
+*******************************************************************************/
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+
+int main()
+{
+    printf("Alphabet Pyramid \n");
+    
+    int n = 4;
+    char a = 'A';
+    int lst = 0;
+    
+    for(int i=1; i<=n ; i++){
+        char b[100];
+        for(int j=0;j<n-i;j++)          // Left Space .
+        {
+            b[j] = ' ';
+        }
+        
+        for(int k=1; k<i ; k++){        // Left Alphabet +
+            b[n-i+k-1]= a+k-1;
+        }
+        
+        b[n-1] = a + i - 1;
+        
+        for(int k=1; k<i ; k++){      // Right Alphabet -
+            b[n-1+k]= (a+i-1) - k;
+        }
+        
+        for(int j=0;j<n-i;j++)         // Right Space ,
+        {
+            b[n+i-1+j] = ' ';
+        }
+        
+        printf("%s %s", b, "\n");
+    }
+
+    return 0;
+}
+
