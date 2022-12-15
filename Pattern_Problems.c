@@ -396,3 +396,48 @@ int main()
     return 0;
 }
 
+/******************************************************************************
+
+                        Asterisk X
+                        Time complexity: O(n)
+Output:
+**** 
+     
+*  *  
+     
+*  *  
+     
+*  *     
+     
+****
+
+*******************************************************************************/
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+
+int main()
+{
+    printf("Asterisk X \n");
+    
+    int n = 4;
+    char b[100];
+    char c[100];
+    char d[100];
+    
+    for(int s=0; s<n; s++) b[s] = '*';
+    for(int s=0; s<n; s++){
+        if(s==0 || s==n-1) c[s] = '*';
+        else c[s] = ' ';
+    } 
+    for(int s=0; s<n; s++) d[s] = ' ';
+    
+    for(int i=0; i<=2*n; i++){
+        if(i==0 || i==2*n) printf("%s %s",b,"\n");
+        else if (i%2 == 0) printf("%s %s",c,"\n");
+        else printf("%s %s",d,"\n");
+    }
+    return 0;
+}
+
