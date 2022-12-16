@@ -441,3 +441,48 @@ int main()
     return 0;
 }
 
+/******************************************************************************
+
+                        Asterisk X
+                        Time complexity: O(n)
+                        Brute force: O(n^2)
+Output:
+4444444
+4333334
+4322234
+4321234
+4322234
+4333334
+4444444
+
+*******************************************************************************/
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+
+int main()
+{
+    printf("Number Decrement Matrix \n");
+    
+    int n = 4;
+    char b[100];
+    
+    for(int s=0; s<2*n-1; s++) b[s] = n + '0';
+    
+    for(int i=0; i<n; i++){             // Upper half
+        if(i == 0) printf("%s\n",b);
+        else{
+            for(int ii=i; ii<=(2*n-2)-i; ii++) b[ii] = (n-i) + '0';
+            printf("%s\n",b);
+        }
+    }
+    
+    for(int i=1; i<n; i++){             // Lower half
+        for(int ii=n-i; ii<=n-1+i; ii++) b[ii] = (i+1) + '0';
+        printf("%s\n",b);
+    }
+    
+    return 0;
+}
+
